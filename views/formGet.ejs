@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulaire GET</title>
+</head>
+<body>
+  <h1>Formulaire d'information (envoi GET)</h1>
+
+  <% if (Object.keys(submittedData).length > 0) { %>
+    <div style="border:1px solid black; padding:10px; margin-bottom:20px;">
+      <h2>Données soumises :</h2>
+      <p><strong>Nom :</strong> <%= submittedData.nom %></p>
+      <p><strong>Prénom :</strong> <%= submittedData.prenom %></p>
+      <p><strong>Adresse-mail :</strong> <%= submittedData["adresse-mail"] %></p>
+      <p><strong>Pays :</strong> <%= submittedData.pays %></p>
+      <p><strong>Téléphone :</strong> <%= submittedData.telephone %></p>
+      <p><strong>Jeux préférés :</strong> <%= submittedData["jeux préférer"] %></p>
+    </div>
+  <% } %>
+
+  <form action="/formGet" method="GET">
+    <label for="nom">Nom :</label><br>
+    <input type="text" name="nom" id="nom" required><br><br>
+
+    <label for="prenom">Prénom :</label><br>
+    <input type="text" name="prenom" id="prenom" required><br><br>
+
+    <label for="adresse-mail">Adresse-mail :</label><br>
+    <input type="email" name="adresse-mail" id="adresse-mail" required><br><br>
+
+    <label for="pays">Pays :</label><br>
+    <input type="text" name="pays" id="pays" required><br><br>
+
+    <label for="telephone">Téléphone :</label><br>
+    <input type="text" name="telephone" id="telephone"><br><br>
+
+    <label for="jeux préférer">Jeux préférés :</label><br>
+    <input type="text" name="jeux préférer" id="jeux préférer"><br><br>
+
+    <input type="submit" value="Envoyer">
+  </form>
+</body>
+</html>
